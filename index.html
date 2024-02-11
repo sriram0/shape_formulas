@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulas for Shapes</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        h1{
+            font-size: 30px;
+            color: orangered;
+            font-family: monospace;
+        }
+        select{
+            /*width:50%;*/
+            font-size: 20px;
+            background-color: red;
+            color: teal;
+            padding: 10px;
+            margin-bottom:10px;
+        }
+        span{
+            color:red;
+        }
+        button{
+            padding: 10px;
+            background-color: orange;
+            color: blue;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+        <h1>Select Dimension</h1>
+        <select id="s1">
+            <option value=""></option>
+            <option value="2">
+                2D
+            </option>
+            <option value="3">
+                3D
+            </option>
+        </select><br>
+        <button onclick="up(1)">
+            Next
+        </button>
+    </div>
+    <div id="d2">
+        <h1>Select Shape</h1>
+        <select id="s2">
+            <option value=""></option>
+            <option value="0">
+                Square
+            </option>
+            <option value="1">
+                Rectangle
+            </option>
+            <option value="2">
+                Triangle
+            </option>
+            <option value="3">
+                Circle
+            </option>
+            <option value="4">
+                Parallelogram
+            </option>
+        </select><br>
+        <button onclick="up(2)">
+            Next
+        </button>
+    </div>
+    <div id="d3">
+        <h1>Select Shape</h1>
+        <select id="s3">
+            <option value=""></option>
+            <option value="0">
+                Cube
+            </option>
+            <option value="1">
+                Rectangular Prism
+            </option>
+            <option value="2">
+                Sphere
+            </option>
+            <option value="3">
+                Cylinder
+            </option>
+            <option value="4">
+                Triangular Prism
+            </option>
+        </select><br>
+        <button  onclick="up(3)">
+            Next
+        </button>
+    </div>
+    <div id="d20">
+        <h1>Square</h1>
+        <span>
+            Area: Length<sup>2</sup><br>
+            Perimeter: Length*4
+        </span>
+    </div>
+    <div id="d21">
+        <h1>Rectangle</h1>
+        <span>
+            Area: Length*Width<br>
+            Perimeter: 2(Length+Width)
+        </span>
+    </div>
+    <div id="d22">
+        <h1>Triangle</h1>
+        <span>
+            Area: Base*Height/2<br>
+            Perimeter: Side1+Side2+Side3
+        </span>
+    </div>
+    <div id="d23">
+        <h1>Circle</h1>
+        <span>
+            Area: π*Radius<sup>2</sup><br>
+            Perimeter: 2π*Radius
+        </span>
+    </div>
+    <div id="d24">
+        <h1>Parallelogram</h1>
+        <span>
+            Area: Base*Height<br>
+            Perimeter: Length of 2 sides *2
+        </span>
+    </div>
+    <div id="d30">
+        <h1>Cube</h1>
+        <span>
+            Volume: Length<sup>3</sup><br>
+            Surface Area: 6*Length<sup>2</sup>
+        </span>
+    </div> 
+    <div id="d31">
+        <h1>Rectangular Prism</h1>
+        <span>
+            
+            Volume: Length*Width*Height<br>
+            Surface Area: 2(Length*Wdith)+2(Length*Height)+2(Width*Height)
+        </span>
+    </div>
+    <div id="d32">
+        <h1>Sphere</h1>
+        <span>
+            Volume: (4π*Radius<sup>3</sup>)/3<br>
+            Surface Area: 4π*Radius<sup>2</sup>
+        </span>
+    </div>
+    <div id="d33">
+        <h1>Cylinder</h1>
+        <span>
+            Volume: π*Radius<sup>2</sup>*Height<br>
+            Surface Area: (2π*Radius<sup>2</sup>)+(2π*Radius*Height)
+        </span>
+    </div>
+    <div id="d34">
+        <h1>Triangular Prism</h1>
+        <span>
+            Volume: Length*Height*Width/2<br>
+            Surface Area: (Triangle Base*Height)+Length(Triangle Side 1+Triangle Side 2+Triangle Side 3)
+        </span>
+    </div><br>
+    <button onclick="x='d';$('div').hide();$('#'+x).show()">Restart</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        let x="d"
+        $("div").hide()
+        $("#"+x).show()
+        function up(i){
+            x+=$("#s"+i).val()
+            $("div").hide()
+            $("#"+x).show()
+        }
+    </script>
+</body>
+</html>
